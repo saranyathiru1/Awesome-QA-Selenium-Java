@@ -40,5 +40,9 @@ To set up the Awesomeqa application locally, follow these steps:
 4. Configure the application:
 * Update configuration files with necessary settings.
 5. Run the application:
-*   npm start
-
+* npm start
+6. Run the application using Selenium grid & Docker:
+* Place docker-compose.yaml file in any location
+* Navigate to file location in cmd prompt
+* Run command  **docker-compose up** to pull selenium hub & browser node images and set up the containers 
+* Change executionEnv to **"Remote"** in config.properties and run **dockergrid.xml** file
