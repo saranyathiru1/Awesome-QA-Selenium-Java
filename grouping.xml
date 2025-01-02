@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <groups>
+        <run>
+            <include name="Sanity"></include>
+        </run>
+    </groups>
+
+
+    <test verbose="2" preserve-order="true" name="Account registration tests">
+        <parameter name="operatingSystem" value="Windows"></parameter>
+        <parameter name="browser" value="chrome"></parameter>
+
+        <classes>
+            <class name="testCases.AccountRegistrationTest"> </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="Login data driven tests">
+        <parameter name="operatingSystem" value="Windows"></parameter>
+        <parameter name="browser" value="chrome"></parameter>
+
+        <classes>
+            <class name="testCases.LoginDataDrivenTest"> </class>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="Placing order E2E tests">
+        <parameter name="operatingSystem" value="Windows"></parameter>
+        <parameter name="browser" value="chrome"></parameter>
+
+        <classes>
+            <class name="testCases.LoginTest"> </class>
+            <class name="testCases.ProductSearchTest"> </class>
+            <class name="testCases.ShoppingCartTest"> </class>
+            <class name="testCases.ProductCheckoutTest"></class>
+            <class name="testCases.OrderHistoryTest"> </class>
+        </classes>
+    </test>
+</suite>

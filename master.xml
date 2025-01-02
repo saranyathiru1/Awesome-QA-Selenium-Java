@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" thread-count="5">
+    <listeners>
+        <listener class-name="utilities.ExtentReportManager"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="Register user with valid data">
+        <parameter name="operatingSystem" value="Windows"></parameter>
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="testCases.AccountRegistrationTest">
+                <methods>
+                    <include name="verifyAccountRegistration"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="Validate user login data driven tests">
+        <parameter name="operatingSystem" value="Windows"></parameter>
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="testCases.LoginDataDrivenTest">
+                <methods>
+                    <include name="verifyValidAndInvalidLoginForMultipleData"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" enabled="true" name="Validate Order Placing E2E Tests">
+        <parameter name="operatingSystem" value="Windows"></parameter>
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="testCases.LoginTest">
+                <methods>
+                    <include name="verifyValidLogin"/>
+                </methods>
+            </class>
+            <class name="testCases.ProductSearchTest">
+                <methods>
+                    <include name="verifySearchWithExistingProduct"/>
+                </methods>
+            </class>
+            <class name="testCases.ShoppingCartTest">
+                <methods>
+                    <include name="validateShoppingCart"/>
+                </methods>
+            </class>
+            <class name="testCases.ProductCheckoutTest">
+                <methods>
+                    <include name="verifyProductCheckOutTitleDisplayed"/>
+                    <include name="verifyProductCheckOutAndOrderPlacing"/>
+                </methods>
+            </class>
+            <class name="testCases.OrderHistoryTest">
+                <methods>
+                    <include name="verifyOrderPresentInOrderHistoryPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
