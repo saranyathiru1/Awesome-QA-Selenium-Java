@@ -15,6 +15,7 @@ public class ShoppingCartTest extends BaseTest {
     public ShoppingCartPage shoppingCartPage;
 
 
+
     @Test(groups = "Regression", priority = 2)
     public void validateShoppingCart() {
         homePage = new HomePage(getDriver());
